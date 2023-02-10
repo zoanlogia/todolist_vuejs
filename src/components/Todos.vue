@@ -6,7 +6,7 @@
     </header>
     <div class="main">
       <ul class="todo-list">
-        <li class="todo" v-for="todo in filteredTodos" :class="{completed: todo.completed}">
+        <li v-bind:key="todo.id" class="todo" v-for="todo in filteredTodos" :class="{completed: todo.completed}">
           <div class="view">
             <input type="checkbox" v-model="todo.completed" class="toggle">
             <label>{{ todo.name }}</label>
@@ -27,7 +27,6 @@
 
 <script>
 
-import todo from './todo'
 export default {
   data () {
     return {
